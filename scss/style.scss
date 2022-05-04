@@ -457,8 +457,8 @@ h2{
 	-webkit-transition: 0.5s ease;
 	-o-transition: 0.5s ease;
 	transition: 0.5s ease;
-	-webkit-filter: drop-shadow(0px -10px 20px rgba(0, 0, 0, 0.54));
-	filter: drop-shadow(0px -10px 20px rgba(0, 0, 0, 0.54));
+	-webkit-filter: drop-shadow(0px -10px 10px rgba(0, 0, 0, 0.54));
+	filter: drop-shadow(0px -10px 10px rgba(0, 0, 0, 0.54));
   }
   .btn__back:hover {
 	-webkit-transform: rotate(180deg) translateX(5px);
@@ -472,8 +472,8 @@ h2{
   .btn__next {
 	border: none;
 	background-color: rgba(255, 255, 255, 0);
-	-webkit-filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.54));
-	filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.54));
+	-webkit-filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.54));
+	filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.54));
   }
   .btn__next:hover {
 	-webkit-transform: translateX(5px);
