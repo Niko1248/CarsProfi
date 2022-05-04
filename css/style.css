@@ -563,35 +563,6 @@ h2 {
   transform: translateX(0);
 }
 
-.header__nav-close {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  top: 40px;
-  right: 180px;
-  z-index: 11;
-  cursor: pointer;
-}
-
-.header__nav-close-line {
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: white;
-  position: absolute;
-  top: 50%;
-}
-
-.header__nav-close-line:first-child {
-  -webkit-transform: translateY(-50%) rotate(45deg);
-  transform: translateY(-50%) rotate(45deg);
-}
-
-.header__nav-close-line:last-child {
-  -webkit-transform: translateY(-50%) rotate(-45deg);
-  transform: translateY(-50%) rotate(-45deg);
-}
-
 .header__action {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -672,43 +643,12 @@ h2 {
   stroke: black;
   stroke-dasharray: 120 580;
   stroke-dashoffset: 120;
-  -webkit-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
+  -webkit-transition: 0.6s ease-in-out;
+  transition: 0.6s ease-in-out;
 }
 
 .header__btn:hover svg {
   stroke-dashoffset: -580;
-}
-
-.header__burger {
-  display: block;
-  width: 40px;
-  height: 28px;
-  position: relative;
-  cursor: pointer;
-}
-
-.burger__line {
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: white;
-  position: absolute;
-  left: 0;
-}
-
-.burger__line_first {
-  top: 0;
-}
-
-.burger__line_second {
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-.burger__line_third {
-  bottom: 0;
 }
 
 .main {
@@ -797,7 +737,7 @@ h2 {
 }
 
 .about__title {
-  color: #472DAC;
+  color: #3cb200;
   margin-bottom: 10px;
 }
 
@@ -825,7 +765,7 @@ h2 {
 .service {
   background: url(../img/avtoservis-back.jpg) no-repeat;
   background-size: cover;
-  margin-bottom: 15%;
+  margin-bottom: 10%;
 }
 
 .service__grid {
@@ -905,7 +845,7 @@ h2 {
 }
 
 .why {
-  margin-bottom: 15%;
+  margin-bottom: 10%;
 }
 
 .why .wrapper {
@@ -934,6 +874,10 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.why__item img {
+  width: 33%;
 }
 
 .why__text {
@@ -969,7 +913,7 @@ h2 {
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
   -webkit-filter: drop-shadow(0px -10px 20px rgba(0, 0, 0, 0.54));
-  filter: drop-shadow(0px -10px 20px rgba(0, 0, 0, 0.54));
+  filter: drop-shadow(0px -10px 10px rgba(0, 0, 0, 0.54));
 }
 
 .btn__back:hover {
@@ -984,7 +928,7 @@ h2 {
   border: none;
   background-color: rgba(255, 255, 255, 0);
   -webkit-filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.54));
-  filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.54));
+  filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.54));
 }
 
 .btn__next:hover {
@@ -1353,9 +1297,6 @@ h2 {
     font-size: 18px;
     line-height: 26px;
   }
-  .why__item img {
-    width: 40%;
-  }
   .footer__container li:first-child {
     font-size: 16px;
     margin-bottom: 20px;
@@ -1620,11 +1561,6 @@ h2 {
   .footer .wrapper-min {
     min-width: 80%;
   }
-}
-
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
 .hamburglar {
