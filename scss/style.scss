@@ -49,7 +49,7 @@ h2{
 	color: #472DAC;
 	text-align: center;
 }
-// Hedaer styles start
+// Header styles start
 .header {
 	position: fixed;
 	padding-top: 30px;
@@ -61,7 +61,8 @@ h2{
 		width: 60%;
 	}
 }
-.header_active{
+// Плавающий header start
+.header_active{  
 	background: #c4c4c491;
 	padding: 0;
 	.burger-container{
@@ -94,11 +95,13 @@ h2{
 		background-color: #000000;
 	}
 }
+// Плавающий header end
 .header__body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
+// Burger menu start
  .header__nav{
 	display: block;
 	width: 100%;
@@ -149,33 +152,7 @@ h2{
 		-ms-transform:translateX(0);
 			transform:translateX(0);
  }
- .header__nav-close{
-	width: 40px;
-	height: 40px;
-	position: absolute;
-	top: 40px;
-	right: 180px;
-	z-index: 11;
-	cursor: pointer;
- }
- .header__nav-close-line{
-	display: block;
-	width: 100%;
-	height: 2px;
-	background-color: white;
-	position: absolute;
-	top: 50%;
- }
- .header__nav-close-line:first-child{
-	-webkit-transform: translateY(-50%) rotate(45deg);
-		-ms-transform: translateY(-50%) rotate(45deg);
-			transform: translateY(-50%) rotate(45deg);
- }
- .header__nav-close-line:last-child{
-	-webkit-transform: translateY(-50%) rotate(-45deg);
-		-ms-transform: translateY(-50%) rotate(-45deg);
-			transform: translateY(-50%) rotate(-45deg);
- }
+ // Burger menu end
 .header__action {
 	display: flex;
 	max-width: 583px;
@@ -234,38 +211,11 @@ h2{
 		stroke: black;
 		stroke-dasharray: 120 580;
 		stroke-dashoffset: 120;
-		transition: 1s ease-in-out;
+		transition: 0.6s ease-in-out;
 	}
 }
 .header__btn:hover svg {
 	stroke-dashoffset: -580;
-}
-.header__burger{
-	display: block;
-	width: 40px;
-	height: 28px;
-	position: relative;
-	cursor: pointer;
-}
-.burger__line{
-	display: block;
-	width: 100%;
-	height: 2px;
-	background-color: white;
-	position: absolute;
-	left: 0;
-}
-.burger__line_first{
-	top: 0;
-}
-.burger__line_second{
-	top: 50%;
-	-webkit-transform: translateY(-50%);
-	    -ms-transform: translateY(-50%);
-	        transform: translateY(-50%);
-}
-.burger__line_third{
-	bottom: 0;
 }
 // Header styles end
 // Main styles start
@@ -336,7 +286,7 @@ h2{
 	}
 }
 .about__title {
-	color: #472DAC;
+	color: #3cb200;
 	margin-bottom: 10px;
 	span{
 		font-family: 'Big Shoulders Stencil Display';
@@ -361,7 +311,7 @@ h2{
 .service {
 	background: url(../img/avtoservis-back.jpg) no-repeat;
 	background-size: cover;
-	margin-bottom: 15%;
+	margin-bottom: 10%;
 }
 .service__grid {
 	padding: 100px 0;
@@ -405,7 +355,7 @@ h2{
 // Service styles end
 // Why styles start
 .why {
-	margin-bottom: 15%;
+	margin-bottom: 10%;
 	.wrapper{
 		background: rgba(179, 183, 213, 0.35);
 		border-radius: 30px;
@@ -423,6 +373,9 @@ h2{
 .why__item {
 	display: flex;
 	align-items: center;
+	img{
+		width: 33%;
+	}
 }
 .why__text {
 	color: #000000;
@@ -457,7 +410,11 @@ h2{
 	-webkit-transition: 0.5s ease;
 	-o-transition: 0.5s ease;
 	transition: 0.5s ease;
+<<<<<<< HEAD
 	-webkit-filter: drop-shadow(0px -10px 10px rgba(0, 0, 0, 0.54));
+=======
+	-webkit-filter: drop-shadow(0px -10px 20px rgba(0, 0, 0, 0.54));
+>>>>>>> 48417826f72c69c3e919295614c8404204be3dc6
 	filter: drop-shadow(0px -10px 10px rgba(0, 0, 0, 0.54));
   }
   .btn__back:hover {
@@ -472,7 +429,11 @@ h2{
   .btn__next {
 	border: none;
 	background-color: rgba(255, 255, 255, 0);
+<<<<<<< HEAD
 	-webkit-filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.54));
+=======
+	-webkit-filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.54));
+>>>>>>> 48417826f72c69c3e919295614c8404204be3dc6
 	filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.54));
   }
   .btn__next:hover {
@@ -815,9 +776,6 @@ h2{
 		font-size: 18px;
 		line-height: 26px;
 	}
-	.why__item img{
-		width: 40%;
-	}
 	.footer__container{
 		li{
 			&:first-child{
@@ -1075,10 +1033,6 @@ $color: #fff;		  // icon color
 $blue: #158fef;	  // background color
 $animation: 0.6s;	// animation speed
 $scale: 1;			  // icon scale 68/68 default
-
-*, *:before, *:after {
-  box-sizing: border-box;
- }
 
 // spacing + background-color
 .hamburglar {
