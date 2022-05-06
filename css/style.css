@@ -520,10 +520,11 @@ h2 {
   background-size: cover;
   z-index: 10;
   padding: 75px;
-  -webkit-transform: translateX(100%);
-  transform: translateX(100%);
+  -webkit-transform: scale(2) rotateY(90deg);
+          transform: scale(2) rotateY(90deg);
   -webkit-transition: 0.3s all linear;
   transition: 0.3s all linear;
+  opacity: 0;
 }
 
 .header__list {
@@ -548,8 +549,8 @@ h2 {
 }
 
 .header__link {
-  font-size: 42px;
-  line-height: 48px;
+  font-size: 30px;
+  line-height: 28px;
   text-decoration: none;
   color: white;
 }
@@ -561,8 +562,9 @@ h2 {
 }
 
 .header__nav_active {
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
+  -webkit-transform: scale(1) rotateY(0deg);
+          transform: scale(1) rotateY(0deg);
+  opacity: 1;
 }
 
 .header__action {
@@ -1578,10 +1580,41 @@ h2 {
           align-items: center;
 }
 
+.ico-menu__wrapper--active {
+  z-index: 10;
+}
+
+.body--fixed {
+  overflow: hidden;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
 .container {
   position: relative;
   width: 30px;
   height: 30px;
+}
+
+.line-i__2-active {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.line-i__1-active {
+  -webkit-transform: translateY(9px) rotate(45deg);
+          transform: translateY(9px) rotate(45deg);
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.line-i__3-active {
+  -webkit-transform: translateY(-9px) rotate(-45deg);
+          transform: translateY(-9px) rotate(-45deg);
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 .line-i {
@@ -1594,31 +1627,13 @@ h2 {
   background-color: #fff;
 }
 
-.menu-ico__active .container:nth-child(2) {
-  opacity: 0;
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
-}
-
-.menu-ico__active .container:nth-child(1) {
-  -webkit-transform: translateY(9px) rotate(45deg);
-          transform: translateY(9px) rotate(45deg);
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
-}
-
-.menu-ico__active .container:nth-child(3) {
-  -webkit-transform: translateY(-9px) rotate(-45deg);
-          transform: translateY(-9px) rotate(-45deg);
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
-}
-
 .circl {
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  border: 3px solid white;
+  border: 1px solid white;
   position: absolute;
   bottom: 0;
   top: 0;

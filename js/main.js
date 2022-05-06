@@ -143,33 +143,28 @@ window.onload = function () {
     scrollTo();
   })();
 
-  // Burger handler
-  (function () {
-    const burgerItem = document.querySelector(".burger");
-    const menu = document.querySelector(".header__nav");
-    const menuCloseItem = document.querySelector(".header__nav-close");
-    const menuLinks = document.querySelectorAll(".header__link");
-    burgerItem.addEventListener("click", () => {
-      menu.classList.add("header__nav_active");
-    });
-    menuCloseItem.addEventListener("click", () => {
-      menu.classList.remove("header__nav_active");
-    });
-    if (window.innerWidth >= 1) {
-      for (let i = 0; i < menuLinks.length; i += 1) {
-        menuLinks[i].addEventListener("click", () => {
-          menu.classList.remove("header__nav_active");
-        });
-      }
-    }
-  });
-  // Бургер меню ico
+  function menu__active(){
+    menu.classList.toggle("header__nav_active");
+  };
 
+  // Бургер, меню ico
+  const line_i__1 = document.querySelector(".line-i__1");
+  const line_i__2 = document.querySelector(".line-i__2");
+  const line_i__3 = document.querySelector(".line-i__3");
   const ico__menu = document.querySelector(".ico-menu");
-  const ico__menu_contaier = document.querySelector(".container");
-
+  const menu = document.querySelector(".header__nav");
+  const body = document.querySelector("body");
 
   ico__menu.addEventListener("click", () => {
-    ico__menu_contaier.classList.toggle("header__nav_active");
+    line_i__1.classList.toggle("line-i__1-active");
+    line_i__2.classList.toggle("line-i__2-active");
+    line_i__3.classList.toggle("line-i__3-active");
+    menu__active();
+    ico__menu.classList.toggle("ico-menu__wrapper--active");
+    body.classList.toggle("body--fixed");
   });
+//end
+
+
+
 };
