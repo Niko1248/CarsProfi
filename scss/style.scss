@@ -333,11 +333,8 @@ h2 {
 .service__grid {
   padding: 100px 0;
   display: grid;
-  grid-template-columns: minmax(250px, 1fr) minmax(250px, 1fr) minmax(
-      250px,
-      1fr
-    );
-  grid-template-rows: minmax(270px, 365px) minmax(270px, 365px);
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  grid-template-rows: repeat(2, minmax(270px, 365px));
   gap: 30px;
   button {
     display: flex;

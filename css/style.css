@@ -774,10 +774,10 @@ h2 {
   padding: 100px 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: minmax(250px, 1fr) minmax(250px, 1fr) minmax(250px, 1fr);
-      grid-template-columns: minmax(250px, 1fr) minmax(250px, 1fr) minmax(250px, 1fr);
-  -ms-grid-rows: minmax(270px, 365px) minmax(270px, 365px);
-      grid-template-rows: minmax(270px, 365px) minmax(270px, 365px);
+  -ms-grid-columns: (minmax(250px, 1fr))[3];
+      grid-template-columns: repeat(3, minmax(250px, 1fr));
+  -ms-grid-rows: (minmax(270px, 365px))[2];
+      grid-template-rows: repeat(2, minmax(270px, 365px));
   gap: 30px;
 }
 
