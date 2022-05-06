@@ -85,12 +85,12 @@ window.onload = function () {
       WrPic1.forEach(function (e) {
         e.classList.remove("wrapper-pic__under");
       });
-      pic2.forEach(function (i) {
+      /* pic2.forEach(function (i) {
         i.classList.add("end");
       });
       WrPic2.forEach(function (e) {
         e.classList.add("end");
-      });
+      }); */
     });
   });
   Checkbtn();
