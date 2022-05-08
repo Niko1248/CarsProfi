@@ -18,6 +18,7 @@ window.onload = function () {
   const WrPic2 = document.querySelectorAll(".wrapper-pic2");
   const pic1 = document.querySelectorAll(".filter1");
   const pic2 = document.querySelectorAll(".filter2");
+  const body = document.querySelector("body");
   //определение количества элеентов в видимой части слайдера
   item.forEach(function (el) {
     el.style.minWidth = itemWidth + "px";
@@ -143,9 +144,9 @@ window.onload = function () {
     scrollTo();
   })();
 
-  function menu__active(){
+  function menu__active() {
     menu.classList.toggle("header__nav_active");
-  };
+  }
 
   // Бургер, меню ico
   const line_i__1 = document.querySelector(".line-i__1");
@@ -153,7 +154,6 @@ window.onload = function () {
   const line_i__3 = document.querySelector(".line-i__3");
   const ico__menu = document.querySelector(".ico-menu");
   const menu = document.querySelector(".header__nav");
-  const body = document.querySelector("body");
 
   ico__menu.addEventListener("click", () => {
     line_i__1.classList.toggle("line-i__1-active");
@@ -161,10 +161,23 @@ window.onload = function () {
     line_i__3.classList.toggle("line-i__3-active");
     menu__active();
     ico__menu.classList.toggle("ico-menu__wrapper--active");
-    body.classList.toggle("body--fixed");
+    body.classList.toggle("body__fixed");
   });
-//end
+  //end
 
+  //popup start
+  const popup = document.querySelector(".popup-bg");
+  const popup_ = document.querySelector(".popup");
 
-
+  document.querySelector(".header__containerButton").addEventListener("click", function () {
+      popup.classList.add("popup_animate");
+      popup_.classList.add("popup-a");
+      body.classList.add("body__fixed");
+    });
+  document.querySelector(".close__img").addEventListener("click", function () {
+    popup.classList.remove("popup_animate");
+    popup_.classList.remove("popup-a");
+    body.classList.remove("body__fixed");
+  });
+  //popup end
 };
