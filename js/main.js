@@ -144,16 +144,17 @@ window.onload = function () {
     scrollTo();
   })();
 
-  function menu__active() {
-    menu.classList.toggle("header__nav_active");
-  }
-
   // Бургер, меню ico
   const line_i__1 = document.querySelector(".line-i__1");
   const line_i__2 = document.querySelector(".line-i__2");
   const line_i__3 = document.querySelector(".line-i__3");
   const ico__menu = document.querySelector(".ico-menu");
   const menu = document.querySelector(".header__nav");
+  const item_service = document.querySelectorAll(".header__link");
+
+  function menu__active() {
+    menu.classList.toggle("header__nav_active");
+  }
 
   ico__menu.addEventListener("click", () => {
     line_i__1.classList.toggle("line-i__1-active");
@@ -163,21 +164,39 @@ window.onload = function () {
     ico__menu.classList.toggle("ico-menu__wrapper--active");
     body.classList.toggle("body__fixed");
   });
+
+  item_service.forEach(function (a) {
+    a.addEventListener("click", () => {
+      menu__active();
+      body.classList.remove("body__fixed");
+    });
+  });
+
   //end
 
   //popup start
   const popup = document.querySelector(".popup-bg");
   const popup_ = document.querySelector(".popup");
 
-  document.querySelector(".header__containerButton").addEventListener("click", function () {
-      popup.classList.add("popup_animate");
-      popup_.classList.add("popup-a");
-      body.classList.add("body__fixed");
-    });
-  document.querySelector(".close__img").addEventListener("click", function () {
+  function btnBookin__mobileAdd() {
+    popup.classList.add("popup_animate");
+    popup_.classList.add("popup-a");
+    body.classList.add("body__fixed");
+  }
+  function btnBookin__mobileRemove() {
     popup.classList.remove("popup_animate");
     popup_.classList.remove("popup-a");
     body.classList.remove("body__fixed");
+  }
+
+  document.querySelector(".button__center").addEventListener("click", function () {
+    btnBookin__mobileAdd()
+  });
+  document.querySelector(".header__containerButton--mobile").addEventListener("click", function () {
+    btnBookin__mobileAdd()
+  });
+  document.querySelector(".close__img").addEventListener("click", function () {
+    btnBookin__mobileRemove() 
   });
   //popup end
 };
