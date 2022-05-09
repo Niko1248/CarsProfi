@@ -12,8 +12,7 @@ window.onload = function () {
   const itemWidth = container.offsetWidth / slidesToShow;
   const scrollWidth = itemWidth * slidesToShow;
   const movePosition = slidesToScroll * itemWidth;
-  const itemsLeft =
-    itemsCount - (Math.abs(position) + slidesToScroll * itemWidth) / itemWidth;
+  const itemsLeft =itemsCount - (Math.abs(position) + slidesToScroll * itemWidth) / itemWidth;
   const WrPic1 = document.querySelectorAll(".wrapper-pic1");
   const WrPic2 = document.querySelectorAll(".wrapper-pic2");
   const pic1 = document.querySelectorAll(".filter1");
@@ -26,8 +25,7 @@ window.onload = function () {
   // end
 
   btn_next.addEventListener("click", function () {
-    position -=
-      itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
+    position -=itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
     setPosition();
     Checkbtn();
   });
@@ -86,14 +84,58 @@ window.onload = function () {
       WrPic1.forEach(function (e) {
         e.classList.remove("wrapper-pic__under");
       });
-      /* pic2.forEach(function (i) {
-        i.classList.add("end");
-      });
-      WrPic2.forEach(function (e) {
-        e.classList.add("end");
-      }); */
     });
   });
+
+  ////////////////////////////////////////////swipe__start////////////////////////////////
+  var logBlock = document.querySelectorAll(".gallery-line");
+  logBlock.forEach(function (el) {
+    el.addEventListener("touchstart", handleTouchStart, false);
+    el.addEventListener("touchmove", handleTouchMove, false);
+  });
+
+  let x1 = null;
+  let y1 = null;
+
+  function handleTouchStart(event) {
+    const firstTouch = event.touches[0];
+    x1 = firstTouch.clientX;
+    y1 = firstTouch.clientY;
+  }
+
+  function handleTouchMove(event) {
+    if (!x1 || !y1) {
+      return false;
+    }
+    let x2 = event.touches[0].clientX;
+    let y2 = event.touches[0].clientY;
+    /* console.log(x2, y2); */
+    let xDiff = x2 - x1;
+    let yDiff = y2 - y1;
+
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {
+      if (xDiff > 0) {
+        position +=itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
+        setPosition();
+        Checkbtn();
+      } else {
+        position -=
+          itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
+        setPosition();
+        Checkbtn();
+      }
+    } else {
+      if (yDiff > 0) {
+        console.log("down");
+      } else {
+        console.log("top");
+      }
+    }
+    x1 = null;
+    y1 = null;
+  }
+  ////////////////////////////////////////// swipe end /////////////////////////////////////////////////////////
+
   Checkbtn();
 
   // Плавающий header
@@ -189,14 +231,18 @@ window.onload = function () {
     body.classList.remove("body__fixed");
   }
 
-  document.querySelector(".button__center").addEventListener("click", function () {
-    btnBookin__mobileAdd()
-  });
-  document.querySelector(".header__containerButton--mobile").addEventListener("click", function () {
-    btnBookin__mobileAdd()
-  });
+  document
+    .querySelector(".button__center")
+    .addEventListener("click", function () {
+      btnBookin__mobileAdd();
+    });
+  document
+    .querySelector(".header__containerButton--mobile")
+    .addEventListener("click", function () {
+      btnBookin__mobileAdd();
+    });
   document.querySelector(".close__img").addEventListener("click", function () {
-    btnBookin__mobileRemove() 
+    btnBookin__mobileRemove();
   });
   //popup end
 };
