@@ -1,23 +1,5 @@
 @import "./nullstyle";
 @import "./fonts";
-
-@mixin serv_btn-media {
-  border: none;
-  border-radius: 30px;
-  font-weight: 700;
-  font-size: 34px;
-  line-height: 63px;
-  color: #ffffff;
-  &:hover {
-    overflow: hidden;
-    transition: 0.4s;
-    transform: scale(1.1);
-  }
-  &:active {
-    color: red;
-    transition: none;
-  }
-}
 body {
   font-family: "Open Sans";
   font-style: normal;
@@ -517,7 +499,21 @@ h2 {
   }
 }
 .service__item {
-  @include serv_btn-media();
+	border: none;
+	border-radius: 30px;
+	font-weight: 700;
+	font-size: 34px;
+	line-height: 63px;
+	color: #ffffff;
+	&:hover {
+	  overflow: hidden;
+	  transition: 0.4s;
+	  transform: scale(1.1);
+	}
+	&:active {
+	  color: red;
+	  transition: none;
+	}
 }
 .service__item1 {
   background: linear-gradient(
@@ -954,23 +950,19 @@ h2 {
       color: #bebebe;
     }
   }
-  img {
-    transform: translateX(50px);
+  .vk-ico{
+	  display: block;
+	  transform: translateX(40px);
   }
 }
 // Footers styles end
 // Media start
 @media screen and (max-width: 1450px) {
   body {
-    font-size: 16px;
+    font-size: 17px;
   }
   h1 {
     font-size: 92px;
-  }
-  .header__button {
-    .btn span {
-      font-size: 16px;
-    }
   }
   .main__title {
     p {
@@ -1032,8 +1024,8 @@ h2 {
     max-width: 90%;
     padding: 0;
   }
-  body {
-    font-size: 17px;
+  body{
+	  font-size: 16px;
   }
   h1 {
     font-size: 74px;
@@ -1045,10 +1037,6 @@ h2 {
   .header__btn {
     font-size: 14px;
     padding: 4px 25px;
-  }
-  .header__burger {
-    width: 35px;
-    height: 20px;
   }
   .main__title {
     p {
@@ -1073,7 +1061,7 @@ h2 {
     line-height: 18px;
   }
   .service__grid {
-    grid-template-columns: repeat(2, minmax(120px, 380px));
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
     grid-template-rows: repeat(3, minmax(120px, 250px));
   }
   .why__text {
@@ -1149,12 +1137,8 @@ h2 {
   .header__containerButton {
     display: none;
   }
-
   .header__phone {
     display: none;
-  }
-  .burger__line {
-    background-color: black;
   }
   .main__title {
     text-align: center;
@@ -1242,8 +1226,10 @@ h2 {
     a {
       font-size: 10px;
     }
+	.vk-ico{
+		transform: translateX(30px);
+	}
     img {
-      transform: translateX(30px);
       width: 25%;
     }
   }
@@ -1260,6 +1246,11 @@ h2 {
   h2 {
     font-size: 16px;
   }
+  .header{
+	  img{
+		  width: 45%;
+	  }
+  }
   .main__title p {
     font-size: 28px;
   }
@@ -1275,6 +1266,7 @@ h2 {
     padding-left: 10px;
   }
   .about__text {
+	  font-size: 14px;
     line-height: 16px;
   }
   .about__img {
@@ -1307,6 +1299,21 @@ h2 {
     .wrapper-min {
       min-width: 80%;
     }
+  }
+  .footer__container {
+    li {
+		margin: 0;
+      &:first-child {
+        margin-bottom: 10px;
+      }
+    }
+    a {
+      font-size: 9px;
+	  line-height: 15px;
+    }
+	.vk-ico{
+		margin-top: 10px;
+	}
   }
 }
 // Media end

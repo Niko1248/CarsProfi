@@ -1504,20 +1504,18 @@ h2 {
   color: #bebebe;
 }
 
-.footer__container img {
-  -webkit-transform: translateX(50px);
-          transform: translateX(50px);
+.footer__container .vk-ico {
+  display: block;
+  -webkit-transform: translateX(40px);
+          transform: translateX(40px);
 }
 
 @media screen and (max-width: 1450px) {
   body {
-    font-size: 16px;
+    font-size: 17px;
   }
   h1 {
     font-size: 92px;
-  }
-  .header__button .btn span {
-    font-size: 16px;
   }
   .main__title p {
     font-size: 48px;
@@ -1568,7 +1566,7 @@ h2 {
     padding: 0;
   }
   body {
-    font-size: 17px;
+    font-size: 16px;
   }
   h1 {
     font-size: 74px;
@@ -1580,10 +1578,6 @@ h2 {
   .header__btn {
     font-size: 14px;
     padding: 4px 25px;
-  }
-  .header__burger {
-    width: 35px;
-    height: 20px;
   }
   .main__title p {
     font-size: 40px;
@@ -1609,8 +1603,8 @@ h2 {
     line-height: 18px;
   }
   .service__grid {
-    -ms-grid-columns: (minmax(120px, 380px))[2];
-        grid-template-columns: repeat(2, minmax(120px, 380px));
+    -ms-grid-columns: (minmax(120px, 1fr))[2];
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
     -ms-grid-rows: (minmax(120px, 250px))[3];
         grid-template-rows: repeat(3, minmax(120px, 250px));
   }
@@ -1691,9 +1685,6 @@ h2 {
   }
   .header__phone {
     display: none;
-  }
-  .burger__line {
-    background-color: black;
   }
   .main__title {
     text-align: center;
@@ -1781,9 +1772,11 @@ h2 {
   .footer__container a {
     font-size: 10px;
   }
-  .footer__container img {
+  .footer__container .vk-ico {
     -webkit-transform: translateX(30px);
             transform: translateX(30px);
+  }
+  .footer__container img {
     width: 25%;
   }
   .btn {
@@ -1798,6 +1791,9 @@ h2 {
   }
   h2 {
     font-size: 16px;
+  }
+  .header img {
+    width: 45%;
   }
   .main__title p {
     font-size: 28px;
@@ -1820,6 +1816,7 @@ h2 {
     padding-left: 10px;
   }
   .about__text {
+    font-size: 14px;
     line-height: 16px;
   }
   .about__img {
@@ -1857,5 +1854,18 @@ h2 {
   }
   .footer .wrapper-min {
     min-width: 80%;
+  }
+  .footer__container li {
+    margin: 0;
+  }
+  .footer__container li:first-child {
+    margin-bottom: 10px;
+  }
+  .footer__container a {
+    font-size: 9px;
+    line-height: 15px;
+  }
+  .footer__container .vk-ico {
+    margin-top: 10px;
   }
 }
