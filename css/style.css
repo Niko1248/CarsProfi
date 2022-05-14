@@ -1043,29 +1043,35 @@ h2 {
   background: transparent;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-transition: 1s linear;
-  transition: 1s linear;
+  -webkit-transition: 0.5s linear;
+  transition: 0.5s linear;
 }
 
 .service__item-active {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   -webkit-transform: rotateY(-180deg);
           transform: rotateY(-180deg);
-  background-color: rgba(255, 255, 255, 0.589);
+  background: -webkit-gradient(linear, left top, left bottom, from(#96969696), color-stop(#f9f9f98d), to(#4a48488d));
+  background: linear-gradient(180deg, #96969696, #f9f9f98d, #4a48488d);
 }
 
 .service__list {
   position: absolute;
-  top: 0;
-  right: 10px;
+  text-align: start;
+  right: 33px;
+  line-height: 25px;
+  top: 33px;
+  width: 90%;
   color: black;
   z-index: 11;
   -webkit-transform: rotateY(-180deg);
-          transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
 }
 
 .service__btn {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   z-index: 12;
   cursor: pointer;
@@ -1083,11 +1089,20 @@ h2 {
           backface-visibility: hidden;
 }
 
-.service__btn:hover {
-  -webkit-transform: rotateY(-35deg);
-          transform: rotateY(-35deg);
+.service__btn:hover .service__item-title {
+  -webkit-transform: translateY(-200%);
+          transform: translateY(-200%);
   -webkit-transition: 0.5s;
   transition: 0.5s;
+}
+
+.service__item-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
 }
 
 .service__item1 {

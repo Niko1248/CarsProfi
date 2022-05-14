@@ -12,7 +12,8 @@ window.onload = function () {
   const itemWidth = container.offsetWidth / slidesToShow;
   const scrollWidth = itemWidth * slidesToShow;
   const movePosition = slidesToScroll * itemWidth;
-  const itemsLeft =itemsCount - (Math.abs(position) + slidesToScroll * itemWidth) / itemWidth;
+  const itemsLeft =
+    itemsCount - (Math.abs(position) + slidesToScroll * itemWidth) / itemWidth;
   const WrPic1 = document.querySelectorAll(".wrapper-pic1");
   const WrPic2 = document.querySelectorAll(".wrapper-pic2");
   const pic1 = document.querySelectorAll(".filter1");
@@ -25,7 +26,8 @@ window.onload = function () {
   // end
 
   btn_next.addEventListener("click", function () {
-    position -=itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
+    position -=
+      itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
     setPosition();
     Checkbtn();
   });
@@ -115,7 +117,8 @@ window.onload = function () {
 
     if (Math.abs(xDiff) > Math.abs(yDiff)) {
       if (xDiff > 0) {
-        position +=itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
+        position +=
+          itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
         setPosition();
         Checkbtn();
       } else {
@@ -250,8 +253,19 @@ window.onload = function () {
 
 const service__item = document.querySelectorAll(".service__item");
 
-service__item.forEach(itemElem => {
-	itemElem.addEventListener("click", function(){
-		itemElem.classList.toggle("service__item-active");
-	});
+function remover() {
+  service__item.forEach(function (e) {
+    if (e.classList.contains("service__item-active")) {
+      e.classList.remove("service__item-active");
+    }
+  });
+}
+
+service__item.forEach(function (e) {
+  e.addEventListener("click", () => {
+    remover();
+    if (!(e.classList.contains("service__item-active"))) {
+      e.classList.toggle("service__item-active");
+    } 
+  });
 });
