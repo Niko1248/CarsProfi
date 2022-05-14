@@ -246,3 +246,12 @@ window.onload = function () {
   });
   //popup end
 };
+// Карточки
+
+const service__item = document.querySelectorAll(".service__item");
+
+service__item.forEach(itemElem => {
+	itemElem.addEventListener("click", function(){
+		itemElem.classList.toggle("service__item-active");
+	});
+});

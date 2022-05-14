@@ -1038,26 +1038,56 @@ h2 {
 }
 
 .service__item {
+  position: relative;
+  border-radius: 30px;
+  background: transparent;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: 1s linear;
+  transition: 1s linear;
+}
+
+.service__item-active {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+  background-color: rgba(255, 255, 255, 0.589);
+}
+
+.service__list {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  color: black;
+  z-index: 11;
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+
+.service__btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 12;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
   border: none;
   border-radius: 30px;
   font-weight: 700;
   font-size: 34px;
   line-height: 63px;
-  color: #ffffff;
+  color: white;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
-.service__item:hover {
-  overflow: hidden;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
-.service__item:active {
-  color: red;
-  -webkit-transition: none;
-  transition: none;
+.service__btn:hover {
+  -webkit-transform: rotateY(-35deg);
+          transform: rotateY(-35deg);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .service__item1 {
@@ -1534,7 +1564,7 @@ h2 {
         grid-template-rows: repeat(2, minmax(150px, 270px));
     gap: 20px;
   }
-  .service__item {
+  .service__btn {
     font-size: 28px;
   }
   .why__text {
@@ -1744,7 +1774,7 @@ h2 {
     margin-bottom: 10px;
     font-size: 18px;
   }
-  .service__item {
+  .service__btn {
     font-size: 20px;
   }
   .why .wrapper {
