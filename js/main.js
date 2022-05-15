@@ -199,12 +199,12 @@ window.onload = function () {
 
   function menu__active() {
     menu.classList.toggle("header__nav_active");
-  }
-
-  ico__menu.addEventListener("click", () => {
     line_i__1.classList.toggle("line-i__1-active");
     line_i__2.classList.toggle("line-i__2-active");
     line_i__3.classList.toggle("line-i__3-active");
+  }
+
+  ico__menu.addEventListener("click", () => {
     menu__active();
     ico__menu.classList.toggle("ico-menu__wrapper--active");
     body.classList.toggle("body__fixed");
@@ -222,6 +222,7 @@ window.onload = function () {
   //popup start
   const popup = document.querySelector(".popup-bg");
   const popup_ = document.querySelector(".popup");
+  const footer_btn = document.querySelector("#booking__footer-btn");
 
   function btnBookin__mobileAdd() {
     popup.classList.add("popup_animate");
@@ -239,6 +240,9 @@ window.onload = function () {
     .addEventListener("click", function () {
       btnBookin__mobileAdd();
     });
+  footer_btn.addEventListener("click", function () {
+    btnBookin__mobileAdd();
+  });
   document
     .querySelector(".header__containerButton--mobile")
     .addEventListener("click", function () {
@@ -248,24 +252,32 @@ window.onload = function () {
     btnBookin__mobileRemove();
   });
   //popup end
-};
-// Карточки
 
-const service__item = document.querySelectorAll(".service__item");
+  // Карточки
 
-function remover() {
+  const service__item = document.querySelectorAll(".service__item");
+  const service_bg = document.querySelector(".service_bg");
+
+  function remover() {
+    service__item.forEach(function (e) {
+      if (e.classList.contains("service__item-active")) {
+        e.classList.remove("service__item-active");
+      }
+    });
+  }
+
   service__item.forEach(function (e) {
-    if (e.classList.contains("service__item-active")) {
-      e.classList.remove("service__item-active");
-    }
+    e.addEventListener("click", () => {
+      remover();
+      if (!e.classList.contains("service__item-active")) {
+        e.classList.toggle("service__item-active");
+      }
+    });
   });
-}
-
-service__item.forEach(function (e) {
-  e.addEventListener("click", () => {
+  service_bg.addEventListener('click', () =>{
     remover();
-    if (!(e.classList.contains("service__item-active"))) {
-      e.classList.toggle("service__item-active");
-    } 
-  });
-});
+  })
+
+
+
+};
