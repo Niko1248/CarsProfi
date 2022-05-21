@@ -181,7 +181,8 @@ window.onload = function () {
       const links = document.querySelectorAll(".js-scroll");
       links.forEach((each) => {
         each.addEventListener("click", function () {
-          const currentTarget = this.getAttribute("href");
+          const currentTarget = this.getAttribute("data-href");
+		  console.log(currentTarget);
           smoothScroll(currentTarget, 1000);
         });
       });
@@ -277,7 +278,5 @@ window.onload = function () {
   service_bg.addEventListener('click', () =>{
     remover();
   })
-
-
-
 };
+

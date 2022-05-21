@@ -551,6 +551,7 @@ h2 {
 }
 
 .header__link {
+  cursor: pointer;
   font-size: 30px;
   line-height: 28px;
   text-decoration: none;
@@ -592,6 +593,7 @@ h2 {
 }
 
 .container {
+  cursor: pointer;
   z-index: 30;
   position: relative;
   width: 45px;
@@ -724,11 +726,11 @@ h2 {
   left: 0;
   top: 0;
   fill: none;
-  stroke: white;
+  stroke: black;
   stroke-dasharray: 120 580;
   stroke-dashoffset: 120;
-  -webkit-transition: 0.6s ease-in-out;
-  transition: 0.6s ease-in-out;
+  -webkit-transition: 0.7s ease-in-out;
+  transition: 0.7s ease-in-out;
 }
 
 .header__btn:hover svg {
@@ -1612,6 +1614,7 @@ h2 {
 }
 
 .footer__container a {
+  cursor: pointer;
   font-size: 14px;
   line-height: 2px;
   letter-spacing: 0.03em;
@@ -1627,6 +1630,19 @@ h2 {
   display: block;
   -webkit-transform: translateX(40px);
           transform: translateX(40px);
+}
+
+.anchor__link {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 2px;
+  letter-spacing: 0.03em;
+  color: #888888;
+  text-decoration: none;
+}
+
+.anchor__link:hover {
+  color: #bebebe;
 }
 
 @media screen and (max-width: 1450px) {
@@ -1819,6 +1835,7 @@ h2 {
     margin: 0 auto;
   }
   .main__title .header__containerButton svg {
+    height: 54px;
     stroke: white;
   }
   .main__title .header__containerButton .header__btn {
