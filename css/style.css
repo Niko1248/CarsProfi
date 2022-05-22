@@ -1525,10 +1525,6 @@ h2 {
   backdrop-filter: blur(2px);
 }
 
-.gallery--mobile {
-  display: none;
-}
-
 .wrapper--mobile {
   overflow: hidden;
   width: 90%;
@@ -1544,6 +1540,7 @@ body {
   width: 100vw;
   height: 100vh;
   position: relative;
+  display: none;
 }
 
 .gallery-flex {
@@ -1695,7 +1692,7 @@ body {
 }
 
 .pic-popup {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   visibility: hidden;

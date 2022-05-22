@@ -1001,9 +1001,6 @@ h2 {
 //For PC end---------------------------------------------------------
 
 //For mobile start---------------------------------------------------
-.gallery--mobile{
-  display: none;
-}
 .wrapper--mobile {
   overflow: hidden;
   width: 90%;
@@ -1017,6 +1014,7 @@ body{
   width: 100vw;
   height: 100vh;
   position: relative;
+  display: none;
 }
 .gallery-flex {
   height: 90vh;
@@ -1134,7 +1132,7 @@ body{
   background-size: cover;
 }
 .pic-popup{
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   visibility: hidden;
