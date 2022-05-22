@@ -122,6 +122,9 @@ h2 {
     margin-bottom: 0;
   }
 }
+.header__item-mob{
+  display: none;
+}
 .header__link {
   cursor: pointer;
   font-size: 30px;
@@ -1479,6 +1482,12 @@ body{
   }
   .header__phone {
     display: none;
+  }
+  .header__item:nth-child(2){
+    display: none;
+  }
+  .header__item-mob{
+    display: block;
   }
   .main__title {
     text-align: center;
