@@ -525,11 +525,6 @@ h2 {
   transform-style: preserve-3d;
   transition: 0.5s linear;
 }
-.service__item-active {
-  transition: 0.5s;
-  transform: rotateY(-180deg);
-  background: linear-gradient(180deg, #08860a96, #0dda588d, #0a742b8d);
-}
 .service__list {
   font-family: open Sans;
   position: absolute;
@@ -542,9 +537,20 @@ h2 {
   z-index: 11;
   -webkit-transform: rotateY(-180deg);
   transform: rotateY(-180deg);
+  li{
+    display: none;
+  }
   li:hover {
     color: rgb(14, 105, 40);
     cursor: pointer;
+  }
+}
+.service__item-active {
+  transition: 0.5s;
+  transform: rotateY(-180deg);
+  background: linear-gradient(180deg, #08860a96, #0dda588d, #0a742b8d);
+  li{
+    display: block;
   }
 }
 .service__btn {
@@ -1295,11 +1301,9 @@ h2 {
       display: block;
       margin: 0 auto;
       svg {
-		height: 54px;  
         stroke: white;
       }
       .header__btn {
-        height: 54px;
         border: 1px solid black;
         span {
           color: #000000;
