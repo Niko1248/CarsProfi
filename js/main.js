@@ -10,7 +10,6 @@ window.onload = function () {
   const btn_next = document.querySelector(".btn__next");
   const itemsCount = item.length;
   const itemWidth = container.offsetWidth / slidesToShow;
-  const scrollWidth = itemWidth * slidesToShow;
   const movePosition = slidesToScroll * itemWidth;
   const itemsLeft =
     itemsCount - (Math.abs(position) + slidesToScroll * itemWidth) / itemWidth;
@@ -25,6 +24,9 @@ window.onload = function () {
   });
   // end
 
+  ////////////////////////////////////////////////slider start////////////////////////////////
+
+  //////////////////////////////////////////////////For PC start/
   btn_next.addEventListener("click", function () {
     position -=
       itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
@@ -89,7 +91,7 @@ window.onload = function () {
     });
   });
 
-  ////////////////////////////////////////////swipe__start////////////////////////////////
+  ///////////////////////////////////// swipe start/
   var logBlock = document.querySelectorAll(".gallery-line");
   logBlock.forEach(function (el) {
     el.addEventListener("touchstart", handleTouchStart, false);
@@ -137,21 +139,47 @@ window.onload = function () {
     x1 = null;
     y1 = null;
   }
-  ////////////////////////////////////////// swipe end /////////////////////////////////////////////////////////
-
   Checkbtn();
+  ///////////////////////////////////// swipe end /
+  //////////////////////////////////////////////////For PC end/
 
-  // Плавающий header
-  (function () {
-    const header = document.querySelector(".header");
-    window.onscroll = () => {
-      if (window.pageYOffset > 50) {
-        header.classList.add("header_active");
-      } else {
-        header.classList.remove("header_active");
-      }
-    };
-  })();
+  //////////////////////////////////////////////////For mobile start/
+  const all_bg = document.querySelectorAll(".all_bg");
+  const popup__gallery__mobile = document.querySelector(".pic-popup");
+  const popup__bg__mobile = document.querySelector(".pic-popup__bg");
+  const popup__img = document.querySelector(".pic-url");
+
+  all_bg.forEach(function (el) {
+    el.addEventListener("click", () => {
+      let b = window.getComputedStyle(el);
+      var f = b.backgroundImage;
+      popup__gallery__mobile.classList.add("active--mobile");
+      body.classList.add("body__fixed");
+      popup__img.classList.add("pic-url--visible");
+      popup__img.style.backgroundImage = f;
+    });
+  });
+  popup__bg__mobile.addEventListener("click", () => {
+    popup__gallery__mobile.classList.remove("active--mobile");
+    body.classList.remove("body__fixed");
+    popup__img.classList.remove("pic-url--visible");
+  });
+
+
+    //////////////////////////////////////////////////For mobile end/
+    //////////////////////////////////////////////////Slider end////////////////////////////////
+
+    // Плавающий header
+    (function () {
+      const header = document.querySelector(".header");
+      window.onscroll = () => {
+        if (window.pageYOffset > 50) {
+          header.classList.add("header_active");
+        } else {
+          header.classList.remove("header_active");
+        }
+      };
+    })();
   // Плавный скролл
   (function () {
     const smoothScroll = function (targetEl, duration) {
@@ -182,7 +210,7 @@ window.onload = function () {
       links.forEach((each) => {
         each.addEventListener("click", function () {
           const currentTarget = this.getAttribute("data-href");
-		  console.log(currentTarget);
+          console.log(currentTarget);
           smoothScroll(currentTarget, 1000);
         });
       });
@@ -275,8 +303,7 @@ window.onload = function () {
       }
     });
   });
-  service_bg.addEventListener('click', () =>{
+  service_bg.addEventListener("click", () => {
     remover();
-  })
+  });
 };
-
